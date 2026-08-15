@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FoodExpress - Registration</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="register.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav>
+
+        <div class="logo">🍔 FoodExpress</div>
+
+        <div class="right-menu">
+
+            <a href="login.html">Login</a>
+
+            <a href="register.html" class="active">Sign Up</a>
+
+            <div class="profile">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= REGISTRATION SECTION ================= -->
+
+    <section class="register-section">
+
+        <div class="register-container">
+
+            <!-- Left Side -->
+
+            <div class="register-info">
+
+                <div class="food-icon">
+                    🍔
+                </div>
+
+                <h1>Join FoodExpress</h1>
+
+                <p>
+                    Create your account and discover delicious food
+                    from the best restaurants near you.
+                </p>
+
+                <div class="benefits">
+
+                    <div class="benefit">
+                        <i class="fa-solid fa-utensils"></i>
+                        <span>Discover great restaurants</span>
+                    </div>
+
+                    <div class="benefit">
+                        <i class="fa-solid fa-truck-fast"></i>
+                        <span>Fast and easy food delivery</span>
+                    </div>
+
+                    <div class="benefit">
+                        <i class="fa-solid fa-tag"></i>
+                        <span>Get exciting offers and discounts</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Right Side - Registration Form -->
+
+            <div class="register-form">
+
+                <h2>Create Account</h2>
+
+                <!-- Error Message -->
+                <div id="errorMessage" class="error-message"></div>
+
+                <p class="form-subtitle">
+                    Register to start ordering your favorite food
+                </p>
+
+
+                <form action="callRegisterServlet" method="post">
+
+                    <!-- Username -->
+
+                    <div class="input-group">
+
+                        <label for="username">
+                            Username
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            <input
+                                type="text"
+                                id="username"
+                                name="userName"
+                                placeholder="Enter your User Name"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Password -->
+
+                    <div class="input-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Enter your password"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Email -->
+
+                    <div class="input-group">
+
+                        <label for="email">
+                            Email
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Address -->
+
+                    <div class="input-group">
+
+                        <label for="address">
+                            Address
+                        </label>
+
+                        <div class="input-box textarea-box">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            <textarea
+                                id="address"
+                                name="address"
+                                placeholder="Enter your delivery address"
+                                rows="3"
+                                required></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Role -->
+
+                    <div class="input-group">
+
+                        <label for="role">
+                            Role Type
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-user-tag"></i>
+
+                            <select id="role" name="role" required>
+
+                                <option value="" disabled selected>
+                                    Select your role
+                                </option>
+
+                                <option value="customer">
+                                    Customer
+                                </option>
+
+                                <option value="restaurant">
+                                    Restaurant Admin
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Terms -->
+
+                    <div class="terms">
+
+                        <input
+                            type="checkbox"
+                            id="terms"
+                            required>
+
+                        <label for="terms">
+                            I agree to the Terms & Conditions
+                        </label>
+
+                    </div>
+
+
+                    <!-- Register Button -->
+
+                    <button type="submit" class="register-btn">
+
+                        <i class="fa-solid fa-user-plus"></i>
+
+                        Create Account
+
+                    </button>
+
+
+                    <!-- Login -->
+
+                    <p class="login-text">
+
+                        Already have an account?
+
+                        <a href="login.html">
+                            Login
+                        </a>
+
+                    </p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <h2>🍔 FoodExpress</h2>
+
+            <p>
+                Delivering happiness with delicious food.
+            </p>
+
+            <p>
+                © 2026 FoodExpress. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= ERROR MESSAGE SCRIPT ================= -->
+
+  <script>
+    window.onload = function () {
+
+        const errorMessage = document.getElementById("errorMessage");
+
+        const params = new URLSearchParams(window.location.search);
+
+        const error = params.get("error");
+
+        if (error === "emailExists") {
+
+            errorMessage.innerHTML =
+                "Email already registered. Please use another email.";
+
+            errorMessage.style.display = "block";
+
+        } else if (error === "failed") {
+
+            errorMessage.innerHTML =
+                "Registration failed. Please try again.";
+
+            errorMessage.style.display = "block";
+        }
+    };
+</script>
+
+</body>
+</html>
+

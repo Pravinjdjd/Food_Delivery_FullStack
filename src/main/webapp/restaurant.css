@@ -1,0 +1,433 @@
+@charset "UTF-8";
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap')
+	;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	background: #f7f7f7;
+	color: #333;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+	width: 100%;
+	height: 70px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 7%;
+	background: #ffffff;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+}
+
+.logo {
+	font-size: 28px;
+	font-weight: 700;
+	
+}
+
+.logo a {
+	text-decoration: none;
+	color: #ff4d2d;
+}
+
+.nav-links li a {
+    text-decoration: none !important;
+    color: #333 !important;
+    font-weight: 500;
+    padding: 8px 5px;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #ff5722 !important;
+}
+
+.nav-links {
+	display: flex;
+	align-items: center;
+	gap: 28px;
+	
+}
+
+.nav-links a {
+	text-decoration: none;
+	color: #333;
+	font-size: 15px;
+	font-weight: 500;
+	transition: 0.3s;
+}
+
+.nav-links a:hover {
+	color: #ff4d2d;
+}
+
+.nav-links a.active {
+	color: #ff4d2d;
+	font-weight: 600;
+}
+
+/* Profile icon */
+.nav-links i {
+	margin-right: 5px;
+}
+
+/* ================= HERO ================= */
+.hero {
+	height: 430px;
+	background: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48)),
+		url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600")
+		center/cover no-repeat;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.overlay {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	text-align: center;
+}
+
+.overlay h1 {
+	font-size: 44px;
+	font-weight: 700;
+	margin-bottom: 12px;
+}
+
+.overlay p {
+	font-size: 18px;
+	margin-bottom: 28px;
+}
+
+/* ================= SEARCH ================= */
+.search-box {
+	width: 600px;
+	max-width: 90%;
+	display: flex;
+	background: white;
+	border-radius: 50px;
+	overflow: hidden;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.search-box input {
+	flex: 1;
+	border: none;
+	outline: none;
+	padding: 16px 20px;
+	font-size: 15px;
+	color: #333;
+}
+
+.search-box button {
+	width: 65px;
+	border: none;
+	background: #ff4d2d;
+	color: white;
+	cursor: pointer;
+	font-size: 18px;
+	transition: 0.3s;
+}
+
+.search-box button:hover {
+	background: #e63e20;
+}
+
+/* ================= HEADING ================= */
+.heading {
+	text-align: center;
+	padding: 45px 20px 25px;
+}
+
+.heading h2 {
+	font-size: 30px;
+	color: #222;
+}
+
+/* ================= RESTAURANTS ================= */
+.restaurants {
+	width: 90%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding-bottom: 60px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 25px;
+}
+
+.restaurants>a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* ================= CARD ================= */
+.card {
+	background: #ffffff;
+	border-radius: 14px;
+	overflow: hidden;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+	transition: 0.3s;
+	height: 100%;
+}
+
+.card:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 8px 25px rgba(255, 77, 45, 0.18);
+}
+
+/* ================= IMAGE ================= */
+.card img {
+	width: 100%;
+	height: 210px;
+	object-fit: cover;
+	display: block;
+}
+
+/* ================= DETAILS ================= */
+.details {
+	padding: 18px;
+}
+
+.details h2 {
+	font-size: 20px;
+	color: #222;
+	margin-bottom: 10px;
+}
+
+.details p {
+	font-size: 14px;
+	color: #666;
+	margin-bottom: 8px;
+}
+
+.rating {
+	color: #ff4d2d !important;
+	font-weight: 600;
+}
+
+/* ================= DISCOUNT ================= */
+.discount {
+	display: inline-block;
+	margin-top: 10px;
+	padding: 7px 13px;
+	background: #fff1ed;
+	color: #ff4d2d;
+	border-radius: 6px;
+	font-size: 13px;
+	font-weight: 600;
+}
+
+/* ================= FOOTER ================= */
+footer {
+	background: #222;
+	color: white;
+	text-align: center;
+	padding: 35px 20px;
+}
+
+.footer-content h2 {
+	color: #ff4d2d;
+	margin-bottom: 10px;
+}
+
+.footer-content p {
+	color: #aaa;
+	font-size: 14px;
+	margin-top: 7px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media ( max-width : 900px) {
+	.restaurants {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media ( max-width : 650px) {
+	.navbar {
+		height: auto;
+		padding: 18px 20px;
+		flex-direction: column;
+		gap: 15px;
+	}
+	.nav-links {
+		gap: 15px;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	.hero {
+		height: 350px;
+	}
+	.overlay h1 {
+		font-size: 30px;
+	}
+	.overlay p {
+		font-size: 16px;
+	}
+	.restaurants {
+		width: 92%;
+		grid-template-columns: 1fr;
+	}
+}
+/* ================= SEARCH BAR ================= */
+
+.restaurant-search-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.restaurant-search {
+    width: 650px;
+    max-width: 90%;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+
+    background: #ffffff;
+    border-radius: 50px;
+    padding-left: 22px;
+
+    overflow: hidden;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+    transition: 0.3s ease;
+}
+
+.restaurant-search:hover {
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.30);
+}
+
+.restaurant-search:focus-within {
+    box-shadow: 0 12px 35px rgba(255, 77, 45, 0.40);
+    transform: translateY(-2px);
+}
+
+
+/* SEARCH ICON */
+
+.restaurant-search .search-icon {
+    color: #777;
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+
+/* INPUT */
+
+.restaurant-search input {
+    flex: 1;
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    padding: 0 18px;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+
+    color: #333;
+}
+
+.restaurant-search input::placeholder {
+    color: #999;
+}
+
+
+/* SEARCH BUTTON */
+
+.restaurant-search button {
+    height: 100%;
+    min-width: 120px;
+
+    border: none;
+    outline: none;
+
+    background: #ff4d2d;
+    color: white;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.restaurant-search button:hover {
+    background: #e63e20;
+}
+
+.restaurant-search button:active {
+    transform: scale(0.96);
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 650px) {
+
+    .restaurant-search {
+        width: 92%;
+        height: 55px;
+        padding-left: 18px;
+    }
+
+    .restaurant-search .search-icon {
+        font-size: 16px;
+    }
+
+    .restaurant-search input {
+        font-size: 13px;
+        padding: 0 12px;
+    }
+
+    .restaurant-search button {
+        min-width: 90px;
+        font-size: 13px;
+    }
+}
+@media ( max-width : 450px) {
+	.logo {
+		font-size: 24px;
+	}
+	.nav-links {
+		gap: 12px;
+	}
+	.nav-links a {
+		font-size: 14px;
+	}
+	.overlay h1 {
+		font-size: 25px;
+	}
+	.heading h2 {
+		font-size: 26px;
+	}
+	.card img {
+		height: 200px;
+	}
+}

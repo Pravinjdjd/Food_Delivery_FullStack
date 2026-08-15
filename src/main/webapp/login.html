@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FoodExpress - Login</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="login.css">
+
+</head>
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav>
+
+        <div class="logo">
+            🍔 FoodExpress
+        </div>
+
+        <div class="right-menu">
+
+            <a href="login.html" class="active">
+                Login
+            </a>
+
+            <a href="register.html">
+                Sign Up
+            </a>
+
+            <div class="profile">
+
+                <i class="fa-solid fa-user"></i>
+
+                <span>Profile</span>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= LOGIN SECTION ================= -->
+
+    <section class="login-section">
+
+        <div class="login-container">
+
+
+            <!-- ================= LEFT SIDE ================= -->
+
+            <div class="login-info">
+
+                <div class="food-icon">
+                    🍔
+                </div>
+
+                <h1>
+                    Welcome Back!
+                </h1>
+
+                <p>
+                    Login to FoodExpress and continue enjoying
+                    your favorite food from the best restaurants.
+                </p>
+
+
+                <!-- Benefits -->
+
+                <div class="benefits">
+
+                    <div class="benefit">
+
+                        <i class="fa-solid fa-utensils"></i>
+
+                        <span>
+                            Order delicious food
+                        </span>
+
+                    </div>
+
+
+                    <div class="benefit">
+
+                        <i class="fa-solid fa-truck-fast"></i>
+
+                        <span>
+                            Fast and easy delivery
+                        </span>
+
+                    </div>
+
+
+                    <div class="benefit">
+
+                        <i class="fa-solid fa-tag"></i>
+
+                        <span>
+                            Enjoy exciting offers
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= LOGIN FORM ================= -->
+
+            <div class="login-form">
+
+                <h2>
+                    Login
+                </h2>
+
+                <p class="form-subtitle">
+                    Enter your account details to continue
+                </p>
+
+
+                <form action="callLoginServlet" method="post">
+
+
+                    <!-- ================= EMAIL ================= -->
+
+                    <div class="input-group">
+
+                        <label for="email">
+                            Email
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================= PASSWORD ================= -->
+
+                    <div class="input-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Enter your password"
+                                required>
+
+                            <i class="fa-solid fa-eye password-eye"
+                               id="togglePassword"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================= OPTIONS ================= -->
+
+                    <div class="login-options">
+
+                        <div class="remember">
+
+                            <input
+                                type="checkbox"
+                                id="remember"
+                                name="remember">
+
+                            <label for="remember">
+                                Remember me
+                            </label>
+
+                        </div>
+
+
+                        <a href="#">
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+
+                    <!-- ================= LOGIN BUTTON ================= -->
+
+                    <button
+                        type="submit"
+                        class="login-btn">
+
+                        <i class="fa-solid fa-right-to-bracket"></i>
+
+                        Login
+
+                    </button>
+
+
+                    <!-- ================= REGISTER ================= -->
+
+                    <p class="register-text">
+
+                        Don't have an account?
+
+                        <a href="register.html">
+                            Create Account
+                        </a>
+
+                    </p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <h2>
+                🍔 FoodExpress
+            </h2>
+
+            <p>
+                Delivering happiness with delicious food.
+            </p>
+
+            <p>
+                © 2026 FoodExpress. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= PASSWORD TOGGLE ================= -->
+
+    <script>
+
+        const password =
+            document.getElementById("password");
+
+        const togglePassword =
+            document.getElementById("togglePassword");
+
+        togglePassword.addEventListener("click", function () {
+
+            if (password.type === "password") {
+
+                password.type = "text";
+
+                this.classList.remove("fa-eye");
+
+                this.classList.add("fa-eye-slash");
+
+            } else {
+
+                password.type = "password";
+
+                this.classList.remove("fa-eye-slash");
+
+                this.classList.add("fa-eye");
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>

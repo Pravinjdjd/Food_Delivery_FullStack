@@ -1,0 +1,958 @@
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f7f7;
+    color: #222;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+    height: 70px;
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 60px;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #ff5a1f;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff5a1f;
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.confirmation-container {
+    width: 90%;
+    max-width: 950px;
+
+    margin: 40px auto 60px;
+}
+
+
+/* =====================================================
+   SUCCESS CARD
+===================================================== */
+
+.success-card {
+    background: #ffffff;
+
+    text-align: center;
+
+    padding: 45px 30px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+    margin-bottom: 25px;
+}
+
+
+/* =====================================================
+   SUCCESS ANIMATION
+===================================================== */
+
+.success-animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 20px;
+
+    height: 100px;
+}
+
+
+/* GREEN CIRCLE */
+
+.success-circle {
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    opacity: 0;
+
+    transform: scale(0);
+
+    box-shadow: 0 0 0 rgba(34, 197, 94, 0);
+}
+
+
+/* CIRCLE SHOW */
+
+.success-circle.show {
+    animation:
+        circlePop
+        0.45s
+        cubic-bezier(.17, .89, .32, 1.35)
+        forwards;
+}
+
+
+/* CIRCLE POP */
+
+@keyframes circlePop {
+
+    0% {
+        opacity: 0;
+        transform: scale(0);
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5);
+    }
+
+    55% {
+        opacity: 1;
+        transform: scale(1.18);
+        box-shadow: 0 0 0 12px rgba(34, 197, 94, 0.15);
+    }
+
+    75% {
+        transform: scale(0.96);
+        box-shadow: 0 0 0 20px rgba(34, 197, 94, 0.08);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        box-shadow: 0 0 0 28px rgba(34, 197, 94, 0);
+    }
+}
+
+
+/* =====================================================
+   CHECK SVG
+===================================================== */
+
+.check-svg {
+    width: 65px;
+    height: 65px;
+
+    overflow: visible;
+}
+
+
+/* Light circle inside */
+
+.check-circle {
+    fill: none;
+
+    stroke: rgba(255, 255, 255, 0.25);
+
+    stroke-width: 2;
+}
+
+
+/* Actual tick */
+
+.check-path {
+    stroke: #ffffff;
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+
+    animation:
+        drawCheck
+        1.2s
+        0.3s
+        ease-in-out
+        forwards;
+}
+
+@keyframes drawCheck {
+    0% {
+        stroke-dashoffset: 50;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+/* DRAW TICK */
+
+@keyframes drawCheck {
+
+    0% {
+        stroke-dashoffset: 50;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+/* =====================================================
+   SUCCESS TEXT
+===================================================== */
+
+.success-card h1 {
+    font-size: 32px;
+
+    margin-bottom: 12px;
+
+    color: #222;
+}
+
+.success-message {
+    font-size: 17px;
+
+    color: #444;
+
+    margin-bottom: 8px;
+}
+
+.delivery-message {
+    color: #777;
+
+    font-size: 14px;
+}
+
+.order-number {
+    display: inline-block;
+
+    margin-top: 18px;
+
+    padding: 9px 18px;
+
+    background: #f0fdf4;
+
+    color: #15803d;
+
+    border-radius: 30px;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   ORDER DETAILS
+===================================================== */
+
+.order-details {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+    margin-bottom: 20px;
+}
+
+.details-card {
+    background: #ffffff;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+}
+
+.details-card h2 {
+    font-size: 20px;
+
+    margin-bottom: 20px;
+}
+
+.detail-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid #eeeeee;
+
+    font-size: 14px;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-row span:first-child {
+    color: #777;
+}
+
+.status {
+    color: #16a34a;
+
+    font-weight: bold;
+}
+
+.amount {
+    color: #ff5a1f;
+
+    font-size: 20px;
+}
+
+.paid-message {
+    margin-top: 12px;
+
+    color: #16a34a;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   ORDER ITEMS
+===================================================== */
+
+.items-card {
+    background: #ffffff;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+
+    margin-bottom: 20px;
+}
+
+.items-card h2 {
+    font-size: 20px;
+
+    margin-bottom: 15px;
+}
+
+.items-message {
+    padding: 18px;
+
+    background: #f8fafc;
+
+    border-radius: 8px;
+
+    color: #555;
+
+    font-size: 14px;
+}
+
+.total-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 20px;
+
+    padding-top: 18px;
+
+    border-top: 2px solid #eeeeee;
+
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+.total-row strong {
+    color: #ff5a1f;
+}
+
+
+/* =====================================================
+   DELIVERY SECTION
+===================================================== */
+
+.delivery-section {
+    background: #fff8f5;
+
+    border: 1px solid #ffe0d2;
+
+    padding: 28px;
+
+    border-radius: 15px;
+
+    margin-bottom: 25px;
+
+    overflow: hidden;
+}
+
+.delivery-title {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+}
+
+.delivery-title h2 {
+    font-size: 21px;
+}
+
+.live-dot {
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    animation:
+        livePulse
+        1.2s
+        infinite;
+}
+
+@keyframes livePulse {
+
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.7);
+        opacity: 0.35;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.delivery-subtitle {
+    text-align: center;
+
+    color: #777;
+
+    margin-top: 7px;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   DELIVERY ROAD
+===================================================== */
+
+.delivery-road {
+    position: relative;
+
+    height: 145px;
+
+    margin-top: 25px;
+
+    border-bottom: 4px dashed #d1d5db;
+}
+
+.delivery-road::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: -8px;
+
+    height: 10px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #444 0px,
+            #444 45px,
+            transparent 45px,
+            transparent 80px
+        );
+
+    opacity: 0.35;
+}
+
+
+/* =====================================================
+   LOCATIONS
+===================================================== */
+
+.location {
+    position: absolute;
+
+    bottom: 5px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 5px;
+
+    z-index: 5;
+}
+
+.restaurant-location {
+    left: 5px;
+}
+
+.home-location {
+    right: 5px;
+}
+
+.location-icon {
+    font-size: 40px;
+}
+
+.location span {
+    font-size: 12px;
+
+    font-weight: bold;
+
+    color: #555;
+}
+
+
+/* =====================================================
+   DELIVERY BIKE
+===================================================== */
+
+.delivery-bike {
+    position: absolute;
+
+    left: 7%;
+
+    bottom: 22px;
+
+    width: 90px;
+
+    height: 75px;
+
+    z-index: 10;
+
+    animation:
+        deliveryRide
+        4s
+        cubic-bezier(.45, .05, .55, .95)
+        infinite;
+}
+
+
+/* BIKE MOVEMENT */
+
+@keyframes deliveryRide {
+
+    0% {
+        left: 7%;
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    10% {
+        transform:
+            translateY(-4px)
+            rotate(-1deg);
+    }
+
+    20% {
+        transform:
+            translateY(0)
+            rotate(1deg);
+    }
+
+    35% {
+        left: 32%;
+
+        transform:
+            translateY(-5px)
+            rotate(0deg);
+    }
+
+    55% {
+        left: 52%;
+
+        transform:
+            translateY(0)
+            rotate(1deg);
+    }
+
+    75% {
+        left: 70%;
+
+        transform:
+            translateY(-4px)
+            rotate(-1deg);
+    }
+
+    90% {
+        left: 78%;
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    100% {
+        left: 82%;
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+}
+
+
+/* =====================================================
+   DELIVERY BOX
+===================================================== */
+
+.delivery-box {
+    position: absolute;
+
+    top: -12px;
+
+    right: 7px;
+
+    width: 32px;
+
+    height: 27px;
+
+    background: #ff5a1f;
+
+    border-radius: 5px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 16px;
+
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.15);
+
+    animation:
+        boxBounce
+        0.55s
+        infinite alternate ease-in-out;
+}
+
+@keyframes boxBounce {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-4px);
+    }
+}
+
+
+/* =====================================================
+   SCOOTER
+===================================================== */
+
+.bike-body {
+    font-size: 58px;
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 13px;
+
+    filter:
+        drop-shadow(
+            0 4px 3px
+            rgba(0, 0, 0, 0.15)
+        );
+}
+
+
+/* =====================================================
+   WHEELS
+===================================================== */
+
+.bike-wheel {
+    position: absolute;
+
+    width: 15px;
+
+    height: 15px;
+
+    background: #222;
+
+    border-radius: 50%;
+
+    bottom: 8px;
+
+    animation:
+        wheelSpin
+        0.25s
+        linear
+        infinite;
+}
+
+.wheel-one {
+    left: 18px;
+}
+
+.wheel-two {
+    right: 15px;
+}
+
+@keyframes wheelSpin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =====================================================
+   DELIVERY STATUS
+===================================================== */
+
+.delivery-status {
+    text-align: center;
+
+    margin-top: 22px;
+
+    color: #555;
+
+    font-size: 14px;
+}
+
+.status-dot {
+    display: inline-block;
+
+    width: 8px;
+
+    height: 8px;
+
+    background: #22c55e;
+
+    border-radius: 50%;
+
+    margin-right: 5px;
+
+    animation:
+        livePulse
+        1s
+        infinite;
+}
+
+.estimated-time {
+    text-align: center;
+
+    margin-top: 10px;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+.estimated-time strong {
+    color: #ff5a1f;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.action-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+.continue-btn,
+.orders-btn {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.continue-btn {
+    background: #ff5a1f;
+
+    color: #ffffff;
+}
+
+.continue-btn:hover {
+    background: #e94d16;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 15px
+        rgba(255, 90, 31, 0.25);
+}
+
+.orders-btn {
+    background: #ffffff;
+
+    color: #ff5a1f;
+
+    border: 1px solid #ff5a1f;
+}
+
+.orders-btn:hover {
+    background: #fff3ed;
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 750px) {
+
+    .navbar {
+        height: auto;
+
+        padding: 18px 25px;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .order-details {
+        grid-template-columns: 1fr;
+    }
+
+    .confirmation-container {
+        width: 94%;
+    }
+
+    .delivery-road {
+        height: 130px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .success-card {
+        padding: 35px 20px;
+    }
+
+    .success-card h1 {
+        font-size: 26px;
+    }
+
+    .success-animation {
+        height: 95px;
+    }
+
+    .success-circle {
+        width: 82px;
+        height: 82px;
+    }
+
+    .check-svg {
+        width: 60px;
+        height: 60px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .continue-btn,
+    .orders-btn {
+        text-align: center;
+
+        width: 100%;
+    }
+
+    .delivery-section {
+        padding: 20px 12px;
+    }
+
+    .delivery-bike {
+        transform: scale(.8);
+    }
+}

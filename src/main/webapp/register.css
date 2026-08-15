@@ -1,0 +1,619 @@
+
+@charset "UTF-8";
+
+/* =======================
+   GOOGLE FONT
+======================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+/* =======================
+   RESET
+======================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* =======================
+   BODY
+======================= */
+
+body {
+    background: #f5f5f5;
+    color: #333;
+}
+
+
+/* =======================
+   NAVBAR
+======================= */
+
+nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+
+    background: #ffffff;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 8%;
+
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+
+    z-index: 1000;
+}
+
+
+/* LOGO */
+
+.logo {
+    font-size: 30px;
+    font-weight: 700;
+    color: #ff5722;
+}
+
+
+/* RIGHT MENU */
+
+.right-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.right-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+
+.right-menu a:hover {
+    color: #ff5722;
+}
+
+
+/* ACTIVE SIGN UP */
+
+.right-menu a.active {
+    color: #ff5722;
+    font-weight: 600;
+}
+
+
+/* PROFILE */
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    background: #ff5722;
+    color: #ffffff;
+
+    padding: 10px 18px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.profile:hover {
+    background: #e64a19;
+}
+
+
+.profile i {
+    font-size: 18px;
+}
+
+
+/* =======================
+   REGISTRATION SECTION
+======================= */
+
+.register-section {
+    min-height: calc(100vh - 80px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 60px 20px;
+}
+
+
+/* =======================
+   MAIN CONTAINER
+======================= */
+
+.register-container {
+    width: 100%;
+    max-width: 1000px;
+
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =======================
+   LEFT INFORMATION
+======================= */
+
+.register-info {
+    background: linear-gradient(
+        135deg,
+        #ff5722,
+        #ff7043
+    );
+
+    color: #ffffff;
+
+    padding: 55px 45px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.food-icon {
+    width: 70px;
+    height: 70px;
+
+    background: rgba(255, 255, 255, 0.2);
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 35px;
+
+    margin-bottom: 25px;
+}
+
+
+.register-info h1 {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+
+.register-info > p {
+    font-size: 16px;
+    line-height: 1.8;
+
+    color: #fff;
+
+    margin-bottom: 35px;
+}
+
+
+/* =======================
+   BENEFITS
+======================= */
+
+.benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.benefit {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    font-size: 15px;
+}
+
+
+.benefit i {
+    width: 38px;
+    height: 38px;
+
+    background: rgba(255, 255, 255, 0.2);
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =======================
+   FORM SECTION
+======================= */
+
+.register-form {
+    padding: 45px 50px;
+}
+
+
+.register-form h2 {
+    font-size: 30px;
+    color: #222;
+
+    margin-bottom: 5px;
+}
+
+
+.form-subtitle {
+    color: #777;
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =======================
+   INPUT GROUP
+======================= */
+
+.input-group {
+    margin-bottom: 17px;
+}
+
+
+.input-group label {
+    display: block;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    color: #333;
+
+    margin-bottom: 7px;
+}
+
+
+/* =======================
+   INPUT BOX
+======================= */
+
+.input-box {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    background: #f8f8f8;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+
+.input-box:focus-within {
+    border-color: #ff5722;
+
+    box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.1);
+
+    background: #ffffff;
+}
+
+
+.input-box i {
+    width: 45px;
+
+    text-align: center;
+
+    color: #ff5722;
+
+    font-size: 16px;
+}
+
+
+.input-box input,
+.input-box select,
+.input-box textarea {
+
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    font-size: 14px;
+
+    color: #333;
+
+    padding: 12px 12px 12px 0;
+}
+
+
+.input-box input::placeholder,
+.input-box textarea::placeholder {
+    color: #aaa;
+}
+
+
+/* =======================
+   TEXTAREA
+======================= */
+
+.textarea-box {
+    align-items: flex-start;
+}
+
+
+.textarea-box i {
+    padding-top: 14px;
+}
+
+
+.input-box textarea {
+    resize: vertical;
+
+    min-height: 75px;
+}
+
+
+/* =======================
+   SELECT
+======================= */
+
+.input-box select {
+    cursor: pointer;
+
+    color: #555;
+}
+
+
+.input-box select:valid {
+    color: #333;
+}
+
+
+/* =======================
+   TERMS
+======================= */
+
+.terms {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin: 15px 0 20px;
+
+    font-size: 13px;
+
+    color: #666;
+}
+
+
+.terms input {
+    accent-color: #ff5722;
+
+    cursor: pointer;
+}
+
+
+.terms label {
+    cursor: pointer;
+}
+
+
+/* =======================
+   REGISTER BUTTON
+======================= */
+
+.register-btn {
+    width: 100%;
+
+    border: none;
+
+    background: #ff5722;
+
+    color: #ffffff;
+
+    padding: 14px;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.register-btn:hover {
+    background: #e64a19;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 5px 15px rgba(255, 87, 34, 0.3);
+}
+
+
+.register-btn i {
+    margin-right: 8px;
+}
+
+
+/* =======================
+   LOGIN TEXT
+======================= */
+
+.login-text {
+    text-align: center;
+
+    margin-top: 20px;
+
+    font-size: 14px;
+
+    color: #777;
+}
+
+
+.login-text a {
+    color: #ff5722;
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+
+.login-text a:hover {
+    text-decoration: underline;
+}
+
+
+/* =======================
+   FOOTER
+======================= */
+
+footer {
+    background: #222;
+
+    color: #ffffff;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+
+.footer-content h2 {
+    color: #ff5722;
+
+    margin-bottom: 15px;
+}
+
+
+.footer-content p {
+    margin: 8px 0;
+
+    color: #ddd;
+}
+
+
+/* =======================
+   RESPONSIVE
+======================= */
+
+@media (max-width: 850px) {
+
+    .register-container {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+
+    .register-info {
+        padding: 40px;
+    }
+
+    .register-info h1 {
+        font-size: 30px;
+    }
+
+    .register-form {
+        padding: 40px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    nav {
+        padding: 15px 5%;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .right-menu {
+        gap: 10px;
+    }
+
+    .profile {
+        padding: 9px 12px;
+    }
+
+    .profile span {
+        display: none;
+    }
+
+    .register-section {
+        padding: 30px 15px;
+    }
+
+    .register-info {
+        padding: 30px 25px;
+    }
+
+    .register-form {
+        padding: 30px 25px;
+    }
+
+    .register-form h2 {
+        font-size: 25px;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .right-menu a {
+        font-size: 13px;
+    }
+
+    .register-info h1 {
+        font-size: 26px;
+    }
+
+    .register-info > p {
+        font-size: 14px;
+    }
+
+    .register-form {
+        padding: 25px 20px;
+    }
+}
+.error-message {
+    color: #d32f2f;
+    background: #ffebee;
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    text-align: center;
+    display: block;
+}
